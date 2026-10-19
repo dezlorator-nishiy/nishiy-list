@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нищий Лист Уровней</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin: 0;
+            color: #ff4141;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 10px 0;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .tab-btn {
+            background-color: #2a2a2a;
+            color: #aaa;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            flex: 1;
+            text-align: center;
+        }
+
+        .tab-btn:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .tab-btn:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tab-btn.active {
+            background-color: #ff4141;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(255, 65, 65, 0.4);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background-color: #3a3a3a;
+            color: #fff;
+        }
+
+        .content-section {
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .list-item {
+            background-color: #1e1e1e;
+            margin: 15px 0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 5px solid #ff4141;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .list-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .rank {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff4141;
+            min-width: 30px;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .author, .player-tag {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .badge {
+            background-color: #3a1515;
+            color: #ff6b6b;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            width: 100%;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: auto;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .footer-creators {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .footer-creators strong {
+            color: #ff4141;
+        }
+
+        .tg-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: #0088cc;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+        }
+
+        .tg-link:hover {
+            background-color: #0077b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Нищий Лист</h1>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab('levels')">Нищие Уровни</button>
+        <button class="tab-btn" onclick="openTab('players')">Нищие Игроки</button>
+    </div>
+
+    <!-- Раздел уровней -->
+    <div id="levels" class="content-section active">
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">#1</span>
+                <div class="details">
+                    <span class="name">Deadlocked</span>
+                    <span class="author">от 🇷🇺 dezlorator</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">#2</span>
+                <div class="details">
+                    <span class="name">Fingerdash</span>
+                    <span class="author">от 🇷🇺 fovtea</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">#3</span>
+                <div class="details">
+                    <span class="name">Shityy Bloodbath</span>
+                    <span class="author">от 🇷🇺 darsed11</span>
+                </div>
+            </div>
+            <span class="badge">93%</span>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">#4</span>
+                <div class="details">
+                    <span class="name">Dash</span>
+                    <span class="author">от 🇷🇺 darsed11</span>
+                </div>
+            </div>
+            <span class="badge">93%</span>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">#5</span>
+                <div class="details">
+                    <span class="name">RetRay</span>
+                    <span class="author">от 🇷🇺 dezlorator</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">#6</span>
+                <div class="details">
+                    <span class="name">Bloodbath auto</span>
+                    <span class="author">от 🇷🇺 TropicalGD</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Раздел игроков -->
+    <div id="players" class="content-section">
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">1</span>
+                <div class="details">
+                    <span class="name">🇷🇺 TropicalGD</span>
+                    <span class="player-tag">Игрок списка</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">2</span>
+                <div class="details">
+                    <span class="name">🇷🇺 dezlorator</span>
+                    <span class="player-tag">Игрок списка</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">3</span>
+                <div class="details">
+                    <span class="name">🇷🇺 darsed11</span>
+                    <span class="player-tag">Игрок списка</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">4</span>
+                <div class="details">
+                    <span class="name">🇷🇺 fovtea</span>
+                    <span class="player-tag">Игрок списка</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <div class="item-info">
+                <span class="rank">5</span>
+                <div class="details">
+                    <span class="name">🇬🇾 ARTEMU13_</span>
+                    <span class="player-tag">Игрок списка</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-creators">
+            <strong>CEO:</strong> dezlorator, google gemini <br>
+            <strong>Совладелец:</strong> TropicalGD
+        </div>
+        <a href="https://t.me/NLLLLLGD" target="_blank" class="tg-link">
+            Наш Telegram-канал
+        </a>
+    </footer>
+
+    <script>
+        function openTab(tabId) {
+            // Скрываем все вкладки
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Убираем активный класс у кнопок
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Активируем нужную вкладку и кнопку
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
