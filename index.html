@@ -95,6 +95,14 @@
             color: var(--accent-color);
             margin-right: 20px;
             min-width: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .frog {
+            font-size: 14px;
+            margin-top: 2px;
         }
 
         .info {
@@ -112,12 +120,25 @@
             color: var(--sub-text);
         }
 
+        .verifier {
+            font-size: 13px;
+            color: #45a29e;
+            margin-top: 3px;
+        }
+
+        .level-id {
+            font-size: 11px;
+            color: var(--sub-text);
+            margin-top: 2px;
+            font-family: monospace;
+        }
+
         .flag {
             font-size: 16px;
             margin-left: 15px;
             font-weight: bold;
-            color: var(--sub-text);
-            border: 1px solid var(--sub-text);
+            color: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
             padding: 2px 6px;
             border-radius: 4px;
             min-width: 30px;
@@ -126,14 +147,10 @@
 
         .flag.ru {
             background: linear-gradient(to bottom, #fff 33%, #0039a6 33%, #0039a6 66%, #d52b1e 66%);
-            color: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .flag.gy {
             background: linear-gradient(135deg, #009e49 0%, #009e49 50%, #ffd100 50%, #ffd100 100%);
-            color: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
         }
 
         footer {
@@ -245,7 +262,7 @@
 
     <div id="levels" class="content-section active">
         <div class="list-item">
-            <div class="rank">#1</div>
+            <div class="rank">#1<span class="frog">🐸</span></div>
             <div class="info">
                 <div class="level-name">Crazy II <span style="color: #ff4d4d;">90%</span></div>
                 <div class="author">by unx, TropicalGD 90%</div>
@@ -253,15 +270,17 @@
             <div class="flag ru">RU</div>
         </div>
         <div class="list-item">
-            <div class="rank">#2</div>
+            <div class="rank">#2<span class="frog">🐸</span></div>
             <div class="info">
                 <div class="level-name">Deadlocked</div>
                 <div class="author">by dezlorator, unx</div>
+                <div class="verifier">✓ verified by 🇷🇺 dezlorator</div>
+                <div class="level-id">ID: 112740597</div>
             </div>
             <div class="flag ru">RU</div>
         </div>
         <div class="list-item">
-            <div class="rank">#3</div>
+            <div class="rank">#3<span class="frog">🐸</span></div>
             <div class="info">
                 <div class="level-name">Wcropolis</div>
                 <div class="author">by dezlorator, TropicalGD, unx</div>
@@ -269,7 +288,7 @@
             <div class="flag ru">RU</div>
         </div>
         <div class="list-item">
-            <div class="rank">#4</div>
+            <div class="rank">#4<span class="frog">🐸</span></div>
             <div class="info">
                 <div class="level-name">Fingerdash</div>
                 <div class="author">by fovtea, unx</div>
@@ -277,7 +296,7 @@
             <div class="flag ru">RU</div>
         </div>
         <div class="list-item">
-            <div class="rank">#5</div>
+            <div class="rank">#5<span class="frog">🐸</span></div>
             <div class="info">
                 <div class="level-name">Geometrical Dominator <span style="color: #ff4d4d;">93%x5</span></div>
                 <div class="author">by fovtea, unx</div>
