@@ -129,6 +129,66 @@
             margin-left: 15px;
         }
 
+        /* Стили для раскрывающегося блока политики */
+        .privacy-accordion {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            background-color: var(--container-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--sub-text);
+            padding: 15px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            color: var(--accent-color);
+        }
+
+        .accordion-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+            color: var(--accent-color);
+        }
+
+        .privacy-accordion.open .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: rgba(11, 12, 16, 0.4);
+        }
+
+        .accordion-content p {
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #ffffff;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         footer {
             margin-top: 40px;
             text-align: center;
@@ -180,7 +240,7 @@
             <div class="rank">#1</div>
             <div class="info">
                 <div class="level-name">Crazy II <span style="color: #ff4d4d;">90%</span></div>
-                <div class="author">by TropicalGD</div>
+                <div class="author">by unx, TropicalGD 90%</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -189,7 +249,7 @@
             <div class="rank">#2</div>
             <div class="info">
                 <div class="level-name">Deadlocked</div>
-                <div class="author">by dezlorator</div>
+                <div class="author">by dezlorator, unx</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -207,7 +267,7 @@
             <div class="rank">#4</div>
             <div class="info">
                 <div class="level-name">Fingerdash</div>
-                <div class="author">by fovtea</div>
+                <div class="author">by fovtea, unx</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -216,7 +276,7 @@
             <div class="rank">#5</div>
             <div class="info">
                 <div class="level-name">Geometrical Dominator <span style="color: #ff4d4d;">93%x5</span></div>
-                <div class="author">by fovtea</div>
+                <div class="author">by fovtea, unx</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -225,7 +285,7 @@
             <div class="rank">#6</div>
             <div class="info">
                 <div class="level-name">Shitty Bloodbath <span style="color: #ff4d4d;">93%</span></div>
-                <div class="author">by darsed11</div>
+                <div class="author">by darsed11, unx</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -234,7 +294,7 @@
             <div class="rank">#7</div>
             <div class="info">
                 <div class="level-name">Dash</div>
-                <div class="author">by darsed11, TropicalMOBILE</div>
+                <div class="author">by darsed11, TropicalMOBILE, unx</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -243,7 +303,7 @@
             <div class="rank">#8</div>
             <div class="info">
                 <div class="level-name">RetRay</div>
-                <div class="author">by dezlorator</div>
+                <div class="author">by dezlorator, unx</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -252,7 +312,7 @@
             <div class="rank">#9</div>
             <div class="info">
                 <div class="level-name">Bloodbath auto</div>
-                <div class="author">by TropicalGD</div>
+                <div class="author">by TropicalGD, unx</div>
             </div>
             <div class="flag">🇷🇺</div>
         </div>
@@ -262,60 +322,20 @@
     <div id="players" class="content-section">
         <div class="list-item">
             <div class="rank">1</div>
-            <div class="player-name">TropicalGD</div>
-            <div class="flag">🇷🇺</div>
-        </div>
-        <div class="list-item">
-            <div class="rank">2</div>
-            <div class="player-name">dezlorator</div>
-            <div class="flag">🇷🇺</div>
-        </div>
-        <div class="list-item">
-            <div class="rank">3</div>
-            <div class="player-name">darsed11</div>
-            <div class="flag">🇷🇺</div>
-        </div>
-        <div class="list-item">
-            <div class="rank">4</div>
-            <div class="player-name">fovtea</div>
-            <div class="flag">🇷🇺</div>
-        </div>
-        <div class="list-item">
-            <div class="rank">5</div>
             <div class="player-name">unx</div>
             <div class="flag">🇷🇺</div>
         </div>
         <div class="list-item">
-            <div class="rank">6</div>
-            <div class="player-name">TropicalMOBILE</div>
+            <div class="rank">2</div>
+            <div class="player-name">TropicalGD</div>
             <div class="flag">🇷🇺</div>
         </div>
         <div class="list-item">
-            <div class="rank">7</div>
-            <div class="player-name">ARTEMU13</div>
-            <div class="flag">🇬🇾</div>
+            <div class="rank">3</div>
+            <div class="player-name">dezlorator</div>
+            <div class="flag">🇷🇺</div>
         </div>
-    </div>
-
-    <footer>
-        <div class="creators">
-            <strong>CEO:</strong> dezlorator, google gemini<br>
-            <strong>Совладелец:</strong> TropicalGD
-        </div>
-        <a href="https://t.me" target="_blank" class="tg-button">Наш Telegram канал</a>
-    </footer>
-
-    <script>
-        function openTab(tabId) {
-            const sections = document.querySelectorAll('.content-section');
-            const buttons = document.querySelectorAll('.tab-btn');
+        <div class="list-item">
+            <div class="rank">4</div>
+            <div class="player-name">darsed11</div>
             
-            sections.forEach(section => section.classList.remove('active'));
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
-</body>
-</html>
