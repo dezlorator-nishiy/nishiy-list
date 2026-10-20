@@ -129,7 +129,7 @@
             margin-left: 15px;
         }
 
-        /* Стили для раскрывающегося блока политики под списками */
+        /* Стили для раскрывающегося блока политики */
         .privacy-accordion {
             width: 100%;
             max-width: 500px;
@@ -340,4 +340,32 @@
             <div class="player-name">fovtea</div>
             <div class="flag">🇷🇺</div>
         </div>
-        
+        Политика конфиденциальности
+▼
+
+
+СЕО всегда прав, кто с ним не согласен тот сосал.
+
+CEO: dezlorator, google gemini
+
+Совладелец: TropicalGD
+
+Наш Telegram канал
+function openTab(tabId) {
+const sections = document.querySelectorAll('.content-section');
+const buttons = document.querySelectorAll('.tab-btn');
+sections.forEach(section => section.classList.remove('active'));
+buttons.forEach(btn => btn.classList.remove('active'));
+document.getElementById(tabId).classList.add('active');
+event.currentTarget.classList.add('active');
+}
+function toggleAccordion() {
+const accordion = document.getElementById('privacyAccordion');
+const content = document.getElementById('accordionContent');
+accordion.classList.toggle('open');
+if (accordion.classList.contains('open')) {
+content.style.maxHeight = content.scrollHeight + "px";
+} else {
+content.style.maxHeight = "0";
+}
+}
